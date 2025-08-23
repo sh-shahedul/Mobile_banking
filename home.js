@@ -1,7 +1,7 @@
  const validPin = 1234
+  
 
 
- 
 //   add money feature 
 document.getElementById('add-btn').addEventListener('click',function(e){
     e.preventDefault()
