@@ -1,4 +1,27 @@
+
+
  const validPin = 1234
+  const transctionData =[]
+
+//  function toggolo handel 
+function toggolHandel(id){
+const formbtn = document.getElementsByClassName
+     ('form-btn')
+     for(const form of formbtn){
+         
+         form.classList.remove("border-[#0874f2]", "bg-[#0874f20d]")
+         form.classList.add("border-gray-300")
+         
+     }
+     
+     document.getElementById(id).classList.remove("border-gray-300")
+     document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874f20d]")
+
+
+
+}
+
+
   
 
 
@@ -33,7 +56,13 @@ document.getElementById('add-btn').addEventListener('click',function(e){
       const totalBalance = newAvailableBalance + addAmmount    
       document.getElementById('available-balance').innerText = totalBalance;
 
-      
+      const data ={
+        name:'Add Money',
+        date: new Date().toLocaleTimeString()
+      }
+
+      transctionData.push(data)
+      console.log(transctionData)
 })
 // cashout money feature
  document.getElementById('withdraw-btn').addEventListener('click',function(e){
@@ -54,7 +83,14 @@ document.getElementById('add-btn').addEventListener('click',function(e){
      const withdrawBalance = mainaBalance-withdrawMoney
    
      document.getElementById('available-balance').innerText=withdrawBalance;
+    
+      const data ={
+        name:'WithDraw Money',
+        date: new Date().toLocaleTimeString()
+      }
 
+      transctionData.push(data)
+      console.log(transctionData)
 
  })
 
@@ -78,6 +114,14 @@ document.getElementById('add-btn').addEventListener('click',function(e){
      const preasentBalance =parseInt(document.getElementById('available-balance').innerText)
      const transferBalance = preasentBalance - transferMoney 
     document.getElementById('available-balance').innerText = transferBalance
+
+     const data ={
+        name:'Transfer Money',
+        date:new Date().toLocaleTimeString()
+      }
+
+      transctionData.push(data)
+      console.log(transctionData)
    
   })
 
@@ -124,21 +168,45 @@ document.getElementById('paybill-btn').addEventListener('click',function(e){
 
      const finalBalance =  fullBalance - paybillAmount;
      document.getElementById('available-balance').innerText = finalBalance
+
+      const data ={
+        name:'Pay Bill',
+        date: new Date().toLocaleTimeString()
+      }
+
+      transctionData.push(data)
+      console.log(transctionData)
     
 })
 
 
+// transction
+document.getElementById('transaction-button').addEventListener('click',function(){
+     console.log(transctionData)
+  const transactionContainer = document.getElementById('transaction-container')
+  transactionContainer.innerText = ''
+      for(const data of transctionData){
+          const div = document.createElement('div')
+          div.innerHTML=`
+          <div  class="p-2 flex items-center justify-between bg-white rounded-lg  mt-3">
+          <div class="flex gap-6 items-center  p-2 ">
+            <div class="  p-2  bg-[#f4f5f7] rounded-full ">
+              <img src="assets/wallet1.png" alt="">
+            </div>
+            <div>
+              <h2 class="font-semibold">${data.name}</h2>
+              <p class="text-xs font-medium text-[#080808c6]">${data.date}</p>
+            </div>
+          </div>
+             <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
 
+          ` 
+          transactionContainer.appendChild(div)
+         }
 
-
-
-
-
-
-
-
-
-
+         
+})
 
 //  toggoloing fratue 
      document.getElementById('add-button').addEventListener('click', function(){
@@ -147,34 +215,75 @@ document.getElementById('paybill-btn').addEventListener('click',function(e){
      document.getElementById('transfer-parent').style .display='none'
      document.getElementById('cupon-parent').style.display='none'
      document.getElementById('paybill-parent').style.display ='none'
+     document.getElementById('transaction-parent').style.display ='none'
+
+
+     toggolHandel('add-button')
 })
+
+
      document.getElementById('cashout-button').addEventListener('click', function(){
      document.getElementById('add-money-parent').style.display='none'
      document.getElementById('cashout-parent').style.display ='block'
      document.getElementById('transfer-parent').style .display='none'
      document.getElementById('cupon-parent').style.display='none'
      document.getElementById('paybill-parent').style.display ='none'
+     document.getElementById('transaction-parent').style.display ='none'
+    toggolHandel('cashout-button')
+
 })
+
+
+
     document.getElementById('transfer-button').addEventListener('click',function(){
     document.getElementById('transfer-parent').style .display='block'
     document.getElementById('add-money-parent').style.display='none'
     document.getElementById('cashout-parent').style.display='none'
     document.getElementById('cupon-parent').style.display='none'
     document.getElementById('paybill-parent').style.display ='none'
+    document.getElementById('transaction-parent').style.display ='none'
+    toggolHandel('transfer-button')
 })
+
+
+
     document.getElementById('cupon-button').addEventListener('click',function(){
     document.getElementById('cupon-parent').style.display='block'
     document.getElementById('transfer-parent').style .display='none'
     document.getElementById('add-money-parent').style.display='none'
     document.getElementById('cashout-parent').style.display='none'
     document.getElementById('paybill-parent').style.display ='none'
+    document.getElementById('transaction-parent').style.display ='none'
+    toggolHandel('cupon-button')
 })
+
+
+
+
+
+
+
     document.getElementById('pay-button').addEventListener('click',function(){
     document.getElementById('paybill-parent').style.display ='block'
     document.getElementById('cupon-parent').style.display='none'
     document.getElementById('transfer-parent').style .display='none'
     document.getElementById('add-money-parent').style.display='none'
     document.getElementById('cashout-parent').style.display='none'
+    document.getElementById('transaction-parent').style.display ='none'
+    toggolHandel('pay-button')
+
+})
+
+    document.getElementById('transaction-button').addEventListener('click',function(){
+    document.getElementById('transaction-parent').style.display ='block'
+    document.getElementById('paybill-parent').style.display ='none'
+    document.getElementById('cupon-parent').style.display='none'
+    document.getElementById('transfer-parent').style .display='none'
+    document.getElementById('add-money-parent').style.display='none'
+    document.getElementById('cashout-parent').style.display='none'
+     toggolHandel('transaction-button')
+   
+
 })
 
 

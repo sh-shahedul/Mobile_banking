@@ -13,6 +13,9 @@
 </head>
 <body class="bg-[#f4f5f7]">
 
+
+
+
     <div class=" flex items-center justify-between max-w-md mx-auto border-b-1 border-gray-300 bg-white p-3">
        <div class=" flex items-center gap-4">
           <img class="h-14" src="./assets/Group.png" alt="">
@@ -26,42 +29,69 @@
        </div>
     </div>
     
+
+
+
+
+
    <div class="max-w-md mx-auto p-3 bg-white">
     <h1 class="text-2xl font-bold my-4">🔥 Welcome to Payooo!</h1>
     <p class="text-[#08080880]">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
    </div>
 
+
+
+
    <div class="max-w-md mx-auto p-3 border-teal-300 grid grid-cols-3 gap-1.5 bg-white rounded-bl-xl rounded-br-xl">
 
   
-   <div id="add-button" class="border-2 border-gray-300 text-center p-3 rounded-lg">
+   <div  id="add-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-lg">
         <img class="mx-auto" src="./assets/wallet1.png" alt="wallet image">
         <p>Add Money</p>
    </div>
-   <div id="cashout-button" class="border-2 border-gray-300 text-center p-3 rounded-lg">
+
+
+
+   <div  id="cashout-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-lg">
         <img class="mx-auto" src="./assets/send1.png" alt="wallet image">
         <p>Cashout</p>
    </div>
-   <div id="transfer-button" class="border-2 border-gray-300 text-center p-3 rounded-lg">
+
+
+
+   <div  id="transfer-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-lg">
         <img class="mx-auto" src="./assets/money1.png" alt="wallet image">
         <p>Transfer Money</p>
    </div>
-   <div id="cupon-button" class="border-2 border-gray-300 text-center p-3 rounded-lg">
+
+
+
+   <div  id="cupon-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-lg">
         <img class="mx-auto" src="./assets/bonus1.png" alt="wallet image">
         <p>Get Bonus</p>
    </div>
-   <div id="pay-button" class="border-2 border-gray-300 text-center p-3 rounded-lg">
+
+
+
+   <div  id="pay-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-lg">
         <img class="mx-auto" src="./assets/purse1.png" alt="wallet image">
         <p>Pay Bill</p>
    </div>
-   <div class="border-2 border-gray-300 text-center p-3 rounded-lg">
+
+
+
+   <div id="transaction-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-lg">
         <img class="mx-auto" src="./assets/transaction1.png" alt="wallet image">
         <p>Transactions</p>
    </div>
    </div>
+
+
+
+
    
   <!-- add money  -->
-   <div id="add-money-parent" class="max-w-md mx-auto  bottom-3 ">
+   <div id="add-money-parent" class="max-w-md mx-auto  bottom-3  ">
       <h1 class="p-4 font-bold mt-3">Add Money</h1>
     
      <form action="" class="p-5 bg-white rounded-lg " >
@@ -121,6 +151,9 @@
 
      </form>
  </div>
+
+
+
 
  <!-- transfer money  -->
     <div id="transfer-parent"  class="max-w-md mx-auto  bottom-3 " style="display: none;"   >
@@ -206,6 +239,29 @@
        <button id="paybill-btn" class="btn bg-[#0874f2] font-semibold text-xl text-white mt-4 rounded-3xl w-full">Pay Now</button>
      </form>
    </div>
+
+
+
+   <!-- transaction  -->
+    <div id="transaction-parent"class="max-w-md mx-auto  bottom-3  py-3 pr-4 " style="display: none;"  >
+        <div class="flex items-center justify-between  ">
+          <div >
+            <h1 class="p-4 font-bold ">Transaction History</h1>
+          </div>
+          <div>
+            <p class="text-[#08080880]">View All</p>
+          </div>
+        </div>
+
+         <div id="transaction-container">
+        
+         </div>
+         
+      
+         
+
+
+    </div>
   
 
  <script src="home.js"></script>
