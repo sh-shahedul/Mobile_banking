@@ -9,15 +9,13 @@ const formbtn = document.getElementsByClassName
      ('form-btn')
      for(const form of formbtn){
          
-         form.classList.remove("border-[#0874f2]", "bg-[#0874f20d]")
+         form.classList.remove("border-[#0874f2]", "bg-[#0874f20d]", "text-blue-500",'font-medium')
          form.classList.add("border-gray-300")
          
      }
      
      document.getElementById(id).classList.remove("border-gray-300")
-     document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874f20d]")
-
-
+     document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874f20d]" ,"text-blue-500",'font-medium')
 
 }
 
